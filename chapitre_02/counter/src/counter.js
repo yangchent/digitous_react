@@ -1,29 +1,18 @@
 import React from "react";
 
 class Counter extends React.Component{
-    constructor(){
+    constructor () {
         super();
-            this.state = {
-                count : 0,
-            };
-    }
-    count= ()=> {
-        this.setState({
-            count: this.state.count - 1,
-            });
-    }
+          this.state = {
+            count: 0,
+          }}
     render(){
         return(
             <div>
-                <h2>{this.state.count}</h2>
-                <button onclick ={this.count} style= {{backgroundColor:"green"}}>-</button>
-                <button 
-                    onClick={()=>  {
-                        this.setState({
-                    count: this.state.count+ 1,
-                    });
-                }}
-                style= {{backgroundColor:"red"}}>+</button>
+                <h2>{this.props.count}</h2>
+
+                <button onClick={this.props.subtractFunction} style={{backgroundColor: "green"}} >-</button>
+                <button onClick={this.props.addFunction} style={{backgroundColor: "red"}} >+</button>
             </div>
         )
     }
