@@ -1,20 +1,16 @@
 import React from "react";
-
+import "./App.css";
 class Counter extends React.Component{
-    constructor () {
-        super();
-          this.state = {
-            count: 0,
-          }}
+    
     render(){
         return(
-            <div>
+            <div class= "container">
+                <button onClick={this.props.subtractFunction}  >-</button>
                 <h2>{this.props.count}</h2>
-
-                <button onClick={this.props.subtractFunction} style={{backgroundColor: "green"}} >-</button>
-                <button onClick={this.props.addFunction} style={{backgroundColor: "red"}} >+</button>
+                <button onClick={this.props.addFunction}  >+</button>
             </div>
         )
     }
 }
+
 export default Counter;
