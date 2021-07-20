@@ -3,8 +3,8 @@ import React from "react";
 class Box extends React.Component {
 	render() {
 		const addRange=()=> {
-		if(this.props.box !== "local_drink"){ 
-		 return <input type="range" min={this.props.min} max={this.props.max} value= {this.props.value}></input>
+		if(this.props.icon !== "local_drink"){ 
+		 return <input onChange={this.props.onChange} type="range" min={this.props.min} max={this.props.max} value= {this.props.value}></input>
 		}}
 		
 		return (
