@@ -6,7 +6,10 @@ class Box extends React.Component {
 		if(this.props.icon !== "local_drink"){ 
 		 return <input onChange={this.props.onChange} type="range" min={this.props.min} max={this.props.max} value= {this.props.value}></input>
 		}}
-		
+		// if(this.props.unit!= "L"){
+		// 	return <input type="range" />
+		// }
+
 		return (
 			<div className="box col-sm-3 col-6">
 				<span

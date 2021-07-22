@@ -26,19 +26,33 @@ class App extends React.Component {
     
   }
   onHeartChange=(e)=>{
-    this.setState({	heart : e.target.value })
-    this.calculateWater();
+    this.setState((prevState) => {
+      return{
+        ...prevState,
+        heart : e.target.value,
+        water :this.calculateWater(prevState, e.target.value)
+      } 
+    });
   }
   onHeatChange=(e)=>{
-    this.setState({	temperature : e.target.value })
-    this.calculateWater();
+    this.setState((prevState) => {
+      return{
+        ...prevState,
+        temperature : e.target.value ,
+        water :this.calculateWater(prevState, e.target.value)
+    }
+  })
   }
   onDirectionChange=(e)=>{
-    this.setState({	steps : e.target.value })
-    this.calculateWater();
+    this.setState((prevState) => {
+      return{
+        ...prevState,
+        steps : e.target.value ,
+        water :this.calculateWater(prevState, e.target.value)
+      }
+    })
   }
-
-  calculateWater= ()=> {
+  calculateWater = (newState)=> {
     let water1=0
     let water2=0
     let water3=0
@@ -54,7 +68,7 @@ class App extends React.Component {
      let total = water1 + water2 + water3;
       this.setState({water : (total + 1.5)} )
         }
-  
+
 	render() {
 		return (
 			<div className="container-fluid">
