@@ -1,6 +1,5 @@
 import React from "react";
 import movies from "../movie.json";
-import { useParams } from "react-router-dom";
 
 
 class Home extends React.Component {
@@ -13,7 +12,7 @@ class Home extends React.Component {
         <div>
             <h1>Movie Details</h1>
                     <ul>
-                        <p><img scr={filteredMovie.image} /></p>
+                        <p><img src={filteredMovie.image} /></p>
                         <li>Movie Name :{filteredMovie.title}</li>
                         <li>Movie Director: {filteredMovie.director}</li>
                         <li>Movie Stars:{filteredMovie.stars}</li>
