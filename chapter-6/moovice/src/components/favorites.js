@@ -4,7 +4,7 @@ import Bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 class favorites extends React.Component {
 	render() {
 		return (
-      <div>
+      <div className="container">
          <h1>Favourites</h1>
       </div>
 

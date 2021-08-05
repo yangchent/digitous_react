@@ -5,12 +5,11 @@ class Card extends React.Component {
 	render() {
 		return (
       <div>
-          
-         <ul>
-             <li><img src={"https://image.tmdb.org/t/p/w300/" + this.props.img} /></li>
-             <li>{this.props.title}</li>
-             <li>{this.props.releaseDate}</li>
-             <li>{this.props.overview}</li>
+         <ul className="list-group">
+             <li className="list-group-item"><img src={"https://image.tmdb.org/t/p/w300/" + this.props.img} /></li>
+             <li className="list-group-item">{this.props.title}</li>
+             <li className="list-group-item">{this.props.releaseDate}</li>
+             <li className="list-group-item">{this.props.overview}</li>
          </ul>
       </div>
 

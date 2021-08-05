@@ -12,13 +12,13 @@ class Home extends React.Component {
 		return (
       <div className="container">
           <h1>Home</h1>
-          <nav className="navbar">
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <ul className="navbar-nav">
-                <li ><Link to="/weekly" className="text-decoration-none">weekly</Link></li>
-                <li ><Link to="/weeklyBattle" className="text-decoration-none">weeklyBattle</Link></li>
-                <li><Link to="/popular" className="text-decoration-none">popular</Link></li>
-                <li><Link to="/popularBattle" className="text-decoration-none">popularBattle</Link></li>
-                <li><Link to="/favorites" className="text-decoration-none">favorites</Link></li>
+                <li className="nav-item"><Link to="/weekly" className="nav-link">weekly</Link></li>
+                <li className="nav-item"><Link to="/weeklyBattle" className="nav-link">weeklyBattle</Link></li>
+                <li className="nav-item"><Link to="/popular" className="nav-link">popular</Link></li>
+                <li className="nav-item"><Link to="/popularBattle" className="nav-link">popularBattle</Link></li>
+                <li className="nav-item"><Link to="/favorites" className="nav-link">favorites</Link></li>
             </ul>
           </nav>
       </div>
