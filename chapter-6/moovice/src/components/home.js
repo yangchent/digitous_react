@@ -4,7 +4,7 @@ import { Link, Switch} from "react-router-dom";
 import weekly from "./weekly";
 import weeklyBattle from "./weekly-battle";
 import popular from "./popular";
-import popularBattle from "./popular-battle";
+import popularBattle from "./Popular-battle";
 import favorites from "./favorites";
 
 class Home extends React.Component {

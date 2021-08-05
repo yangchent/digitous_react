@@ -4,7 +4,7 @@ import Home from "./components/home";
 import weekly from "./components/weekly";
 import weeklyBattle from "./components/weekly-battle";
 import popular from "./components/popular";
-import popularBattle from "./components/popular-battle";
+import popularBattle from "./components/Popular-battle";
 import favorites from "./components/favorites";
 
 
