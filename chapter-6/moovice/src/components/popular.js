@@ -3,10 +3,7 @@ import Bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 import { Link, Switch} from "react-router-dom";
 import Card from "./Card";
 import Home from "./home";
-import weekly from "./weekly";
-import weeklyBattle from "./weekly-battle";
-import popularBattle from "./Popular-battle";
-import favorites from "./favorites";
+
 
 class popular extends React.Component {
     constructor(){
@@ -24,33 +21,28 @@ class popular extends React.Component {
 	})
 	.catch(error => console.error(error));
     }
+    
         render() {
             console.log(this.state.movies)
 		    return (
                 <div className="container" >
                     <h1>Popular</h1>
-                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        <ul className="navbar-nav">
-                            <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
-                            <li className="nav-item"><Link to="/weekly" className="nav-link">Weekly</Link></li>
-                            <li className="nav-item"><Link to="/weeklyBattle" className="nav-link">WeeklyBattle</Link></li>
-                            <li className="nav-item"><Link to="/popularBattle" className="nav-link">PopularBattle</Link></li>
-                            <li className="nav-item"><Link to="/favorites" className="nav-link">Favorites</Link></li>
-                        </ul>
-                    </nav>
-
-                    {this.state.movies.map(movie => {
-                        return <li className="list-group-item">
+                        <Home />
+                    <div className="card" style={{width: '18rem;'}}> 
+                        {this.state.movies.map(movie => {
+                            return <div className="col-4">
                                 <Card 
-                                img = { movie.poster_path}
-                                title = {movie.title}
-                                releaseDate ={movie.release_date}
-                                overview = {movie.overview}
-                                /></li>
+                                    onClick={this.handleClick}
+                                    img = { movie.poster_path}
+                                    title = {movie.title}
+                                    releaseDate ={movie.release_date}
+                                    overview = {movie.overview}
+                                    />
+                            </div>
                     })
                     }
+                    </div>
                 </div>
-
      )}
 }
 export default popular;

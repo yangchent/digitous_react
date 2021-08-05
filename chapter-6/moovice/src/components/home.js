@@ -11,7 +11,6 @@ class Home extends React.Component {
 	render() {
 		return (
       <div className="container">
-          <h1>Home</h1>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <ul className="navbar-nav">
                 <li className="nav-item"><Link to="/weekly" className="nav-link">weekly</Link></li>

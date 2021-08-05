@@ -1,10 +1,8 @@
 import React from "react";
 import Bootstrap from "bootstrap/dist/css/bootstrap.min.css";
-import popular from "./popular";
-import weeklyBattle from "./weekly-battle";
-import popularBattle from "./Popular-battle";
-import favorites from "./favorites";
 import { Link, Switch} from "react-router-dom";
+import Card from "./Card";
+import Home from "./home";
 
 class PopularBattle extends React.Component {
    constructor(){
@@ -34,27 +32,22 @@ class PopularBattle extends React.Component {
 		return (
       <div className="container">
          <h1>Popular Battle</h1>
+            <Home />
 
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-               <ul className="navbar-nav">
-                  <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
-                  <li className="nav-item"><Link to="/weeklyBattle" className="nav-link">Weekly Battle</Link></li>
-                  <li className="nav-item"><Link to="/popular" className="nav-link">Popular</Link></li>
-                  <li className="nav-item"><Link to="/weekly" className="nav-link">Weekly</Link></li>
-                  <li className="nav-item"><Link to="/favorites" className="nav-link">Favorites</Link></li>
-               </ul>
-            </nav>
-
-            {this.state.movies.slice(0,2).map(movie => {
-               return (
-                  <ul className="list-group">
-                     <li className="list-group-item"><img src={"https://image.tmdb.org/t/p/w300/" + movie.poster_path} onClick={this.handleClick}/></li>
-                     <li className="list-group-item">{movie.title}</li>
-                     <li className="list-group-item">{movie.release_date}</li>
-                     <li className="list-group-item">{movie.overview}</li> 
-               </ul>
-               )
-         })}              
+         <div className="card" style={{width: '18rem;'}}> 
+            {this.state.movies.slice(this.state.currentBattle, this.state.currentBattle+2).map((movie)=>{
+               const movieLink = "https://image.tmdb.org/t/p/w300/"
+                  return <div className="col-4">
+                           <Card 
+                           onClick={this.handleClick}
+                           img = { movie.poster_path}
+                           title = {movie.title}
+                           releaseDate ={movie.release_date}
+                           overview = {movie.overview}/>
+                           </div>
+               })} 
+                  
+         </div>
       </div>
      )}
 }
