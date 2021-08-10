@@ -1,33 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+
 import Counter from "./Counter";
 import "./App.css";
 
-class App extends React.Component {
-  constructor () {
-    super();
-      this.state = {
-        count: 0,
-      }
-  };
-   addFunction=()=> {
-    this.setState({
-      count: this.state.count + 1
-    })
+const App = () => {
+   const [count, setCount] = useState(0);
+    
+
+   const addFunction=()=> {
+    setCount( count+1)
   }
-  subtractFunction=()=> {
-    if(this.state.count >0 ) {
-      this.setState({
-        count: this.state.count-1
-      })
+  const subtractFunction=()=> {
+    if(count >0 ) {
+      setCount( count-1)
     }}
-  render() {
-    return(
-      <div>
+
+    return<div>
         <h1>Counter</h1>
-        <Counter count={this.state.count} addFunction={this.addFunction} subtractFunction = {this.subtractFunction}
+        <Counter count={count} addFunction={addFunction} subtractFunction = {subtractFunction}
         />
       </div>
-    )
+  
   }
-}
+
 export default App;
