@@ -1,5 +1,4 @@
 import React from 'react';
-import Home from './Home';
 import { useForm } from "react-hook-form";
 
 
@@ -9,13 +8,16 @@ function Login(){
     const onSubmit = data => console.log(data);
      
 
-  return <div>
+  return <div className="container">
       <h1>Login</h1>
       <navBar />
-      
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("userName", { required: true, maxLength:  15 })} />
-        <input {...register("password", { required: true, minLength:  6 })} />
+
+      <form onSubmit={handleSubmit(onSubmit)} className="form-group">
+        <label for="">Name</label>
+        <input {...register("userName", { required: true, maxLength:  15 })} 
+        class="form-control" type="userName" />
+        <label for="">Password</label>
+        <input {...register("password", { required: true, minLength:  6  })} type="password" class="form-control" />
         <input type="submit" />
       </form>
   </div>
