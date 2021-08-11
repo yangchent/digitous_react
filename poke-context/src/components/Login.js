@@ -10,7 +10,6 @@ function Login(){
 
     const onSubmit = () =>  loggedContext.setAuth();
  
-     
 
   return <div className="container">
       <h1>Login</h1>
@@ -25,8 +24,8 @@ function Login(){
         <input {...register("password", { required: true, minLength:  6  })} type="password" class="form-control" />
         {errors.password && <p>password is required!</p>}
         
-        {!loggedContext.isLogged ? <input  type="submit" value="se connecter"/> 
-        : <input  type="submit" value="se déconnecter" /> }
+        {!loggedContext.isLogged ? <input onClick={handleSubmit} type="submit" value="se connecter"/> 
+        : <input onClick={handleSubmit} type="submit" value="se déconnecter" /> }
       </form>
   </div>
 }
