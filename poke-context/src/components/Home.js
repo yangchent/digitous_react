@@ -10,9 +10,8 @@ function Home(){
     useEffect(() => {
         fetch("https://pokeapi.co/api/v2/pokemon/1")
           .then((res) => res.json())
-          .then((res) => {
-                setPokemon(res);
-          });
+          .then((res) => setPokemon(res)
+          );
     },[]);
 
         const handleClick = () =>{
